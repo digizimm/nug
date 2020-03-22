@@ -1,0 +1,274 @@
+#sticky-header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: calc( (100wv - 327px) / 2 );
+    width: 327px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 16px 24px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+/****************************************************************************************************************
+ * Pagefold
+ ***************************************************************************************************************/
+#pagefold {
+    width: 100%;
+    height: calc(100vh - 96px);
+    min-height: 600px;
+    max-height: 690px;
+    background: url("../../../images/pagefold-bg.png") no-repeat;
+    background-size: cover;
+}
+
+#pagefold-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 16px 24px;
+}
+
+#pagefold-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30%;
+}
+
+#pagefold-content h1 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#pagefold-content p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+    color: white;
+    text-align: center;
+    margin: 24px 0 48px 0;
+}
+
+#pagefold-content .button-48:first-of-type {
+    margin-bottom: 12px;
+}
+
+#start-tutorial-wrapper {
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+#start-tutorial-wrapper img {
+    float: left;
+    margin-right: 12px;
+}
+
+#start-tutorial-wrapper span {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/****************************************************************************************************************
+ * Text block
+ ***************************************************************************************************************/
+#first-title-text-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #F9FAFC;
+}
+
+#first-title-text-element h2 {
+    margin: 48px 0 16px 0;
+    text-align: center;
+}
+
+#first-title-text-element p {
+    color: rgba(84, 89, 115, .7);
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+/****************************************************************************************************************
+ * So funktionierts
+ ***************************************************************************************************************/
+#how-it-works {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#how-it-works h2 {
+    text-align: center;
+    margin: 48px 0 24px 0;
+}
+
+#how-it-works .tab-menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#how-it-works .tab-menu li {
+    color: rgba(86, 87, 113, .4);
+    padding: 0 24px 6px 24px;
+    cursor: pointer;
+}
+
+#how-it-works .tab-menu li.active {
+    color: #2196F3;
+    border-bottom: 2px #2196F3 solid;
+}
+
+#how-it-works .tab-content {
+    display: none;
+}
+
+#how-it-works .tab-content.active {
+    display: block;
+}
+
+#how-it-works .step-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px rgba(0, 0, 0, .1) solid;
+}
+
+#how-it-works .step-wrapper img {
+    margin-top: 48px;
+}
+
+#how-it-works .step-wrapper h4 {
+    margin: 16px 0 8px 0;
+    text-align: center;
+}
+
+#how-it-works .step-wrapper p {
+    text-align: center;
+    margin-bottom: 48px;
+    color: rgba(86, 87, 113, .8);
+}
+
+/****************************************************************************************************************
+ * C2A
+ ***************************************************************************************************************/
+#c2a-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2196F3;
+}
+
+#c2a-block .button-48 {
+    margin: 48px 0;
+}
+
+/****************************************************************************************************************
+ * F.A.Q
+ ***************************************************************************************************************/
+#faq-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#faq-section h2 {
+    margin: 48px 0 24px 0;
+}
+
+#faq-section .accordeon-list {
+    width: calc(100% - 48px);
+    margin-bottom: 48px;
+}
+
+#faq-section .accordeon-list li {
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+#faq-section .accordeon-list li .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    color: #2196F3;
+    font-weight: 500;
+    background: #F4F6F9;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+#faq-section .accordeon-list li span {
+    pointer-events: none;
+}
+
+#faq-section .accordeon-list li .title .enfold-button {
+    width: 12px;
+    height: 8px;
+    background: url("../../../images/enfold_icon.png");
+    pointer-events: none;
+}
+
+#faq-section .accordeon-list li .enfolded-content {
+    display: none;
+    padding: 16px;
+    border: 2px #F4F6F9 solid;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 14px;
+    color: rgba(86, 87, 113, 1);
+}
+
+/****************************************************************************************************************
+ * Get in Contact
+ ***************************************************************************************************************/
+#get-in-contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #F4F6F9;
+}
+
+#get-in-contact-section h2 {
+    margin: 48px 0 16px 0;
+}
+
+#get-in-contact-section p {
+    color: rgba(86, 87, 113, .8);
+}
+
+#get-in-contact-section .button-48 {
+    margin: 24px 0 48px 0;
+}
+
+/****************************************************************************************************************
+ * Footer
+ ***************************************************************************************************************/
+#footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 56px;
+    background: #2196F3;
+}
+
+#footer-section .copyright {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}

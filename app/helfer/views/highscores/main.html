@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/highscores/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+        <div class="overlay" id="confirm-delivered-overlay">
+            <div class="container">
+                <h1 class="title">Bestätigung erforderlich</h1>
+                <p class="text">Bitte bestätige deine Zustellung erneut.</p>
+                <div class="abort-confirm-wrapper">
+                    <button id="abort-btn" class="abort-button">Abbrechen</button>
+                    <button id="confirm-btn" class="confirm-button">Bestätigen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <h2>Ranglisten</h2>
+
+            <select>
+                <option>Stadtname User</option>
+                <option>Bundesland</option>
+                <option>Deutschlandweit</option>
+            </select>
+
+            <div class="ranking"></div>
+
+            <ul class="list">
+                <li>
+                    <div class="place">4.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">5.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">6.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">7.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">8.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">9.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">10.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">11.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">12.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">13.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+                <li>
+                    <div class="place">14.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+            </ul>
+
+        </div>
+
+        <nav id="main-nav">
+            <div class="option" id="main-nav-btn-home"></div>
+            <div class="option" id="main-nav-btn-search"></div>
+            <div class="option active" id="main-nav-btn-score"></div>
+            <div class="option" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * Back Button
+             */
+            $(".back-btn").click(function() {
+                window.history.back();
+            });
+
+            /**
+             * Tab Functionality
+             */
+            $('.tab-menu-item').on("click", function(e) {
+                let clickedElem = e.target;
+                if (!$(clickedElem).hasClass("active")) {
+                    $('.tab-menu-item.active').removeClass("active");
+                    $(clickedElem).addClass("active");
+                    let tabContentIdToShow = $(clickedElem).attr("data-tab-content-id");
+
+                    $('.tab-content.active').fadeOut(150, function(){
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").fadeIn(150);
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").addClass("active");
+                    });
+                }
+            });
+
+            /**
+             * Kassenzettel erfassen
+             **/
+            $("#scan-btn").click(function() {
+
+                $("#image-upload-input").click();
+
+            });
+
+            $("#image-upload-input").on("change", function() {
+                console.log($(this).val());
+            });
+
+            /**
+             * Zugestellt action
+             */
+            $('#delivered-btn').click(function() {
+                $('#confirm-delivered-overlay').css("display", "flex").hide().fadeIn(150);
+            });
+
+            $('#abort-btn').click(function() {
+                $('#confirm-delivered-overlay').fadeOut(150);
+            });
+
+            $('#confirm-btn').click(function(){
+                window.open("?v=home&served=true", "_parent");
+            });
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/**
+    Semibold ~ 600
+ */
+
+body, p, button, h1, span, ul {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    font-family: "SF Pro Display";
+}
+
+p {
+    text-align: center;
+    line-height: 21px;
+    font-weight: 400;
+    padding: 0 24px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+h1 {
+    text-align: center;
+    color: #545973;
+    font-size: 40px;
+    line-height: 56px;
+    padding: 0 24px;
+}
+
+h2 {
+    text-align: center;
+    color: #545973;
+    line-height: 27px;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 0 24px;
+}
+
+h4 {
+    text-align: center;
+    color: #545973;
+    line-height: 21px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 24px;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "SF Pro Display";
+    background: rgba(0, 0, 0, .2);
+}
+
+
+.button-48 {
+    width: 224px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    border-radius: 3px;
+    background: #2196F3;
+}
+
+.button-48.white {
+    background: white;
+    color: #2196F3;
+}
+
+.text-highlight-bold {
+    font-weight: 700;
+}
+
+.text-highlight-blue {
+    color: #2196F3;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+
+@media only screen and (min-width: 600px) and (-webkit-max-device-pixel-ratio: 2) {
+    #main {
+        width: 100%;
+        max-width: 375px;
+        height: auto;
+        background: white;
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------------------
+ *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ *-------------------------------------------------------------------------------------------------------------*/
+
+
+/****************************************************************************************************************
+ * Menu
+ ***************************************************************************************************************/
+#menu-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: calc( ((100wv - 327px) / 2) );
+    width: 375px;
+    height: 100vh;
+    background: rgba(255, 255, 255, .95);
+}
+
+#menu-container .close-btn {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 24px;
+    height: 24px;
+    background: url('../images/close_icon.png') no-repeat center;
+}
+
+#menu-container .list li {
+    margin: 12px 0;
+}
+
+
+.divider-text {
+    color: #545973;
+    margin: 24px 0 24px 0;
+}

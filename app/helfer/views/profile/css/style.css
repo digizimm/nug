@@ -1,0 +1,135 @@
+#main {
+    background: linear-gradient(0deg, #2196F3, #8AC7F8);
+}
+
+.content {}
+
+h2 {
+    font-size: 21px;
+    margin: 24px 0 24px 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(84, 89, 115, .6);
+}
+
+
+.simulate {
+    width: 375px;
+    height: auto;
+}
+
+.btn1 {
+    position: absolute;
+    top: 257px;
+    left: calc( ((100wv - 327px) / 2) );
+    margin-left: 122px;
+    width: 126px;
+    height: 32px;
+    background: rgba(255, 255, 255, .01);
+}
+
+.btn2 {
+    position: absolute;
+    top: 636px;
+    left: calc( ((100wv - 327px) / 2) );
+    margin-left: 48px;
+    width: 280px;
+    height: 56px;
+    background: rgba(255, 255, 255, .01);
+}
+
+.btn3 {
+    position: absolute;
+    top: 496px;
+    left: 24px;
+    width: 163px;
+    height: 56px;
+    background: rgba(255, 255, 255, .01);
+}
+
+.btn4 {
+    position: absolute;
+    top: 496px;
+    left: 187px;
+    width: 163px;
+    height: 56px;
+    background: rgba(255, 255, 255, .01);
+}
+
+.btn5 {
+    position: absolute;
+    top: 421px;
+    left: 25px;
+    width: 326px;
+    height: 56px;
+    background: rgba(255, 255, 255, .01);
+}
+
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: calc( (100wv - 327px) / 2 );
+    width: 375px;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+}
+
+.overlay .container {
+    width: 327px;
+    border-radius: 6px;
+    background: white;
+}
+
+.container .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #545973;
+}
+
+.container .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #545973;
+}
+
+.abort-confirm-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(84, 89, 115, .1);
+}
+
+.abort-button {
+    width: calc(50% - 24px);
+    height: 48px;
+    background: white;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "SF Pro Display";
+    border-bottom-left-radius: 6px;
+    color: #545973;
+}
+
+.confirm-button {
+    width: calc(50% - 24px);
+    height: 48px;
+    color: white;
+    background: #2196F3;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "SF Pro Display";
+    border-bottom-right-radius: 6px;
+}

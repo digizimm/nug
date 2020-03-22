@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/search/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+
+            <h1 class="page-title">Botensucher<br /><span class="text-highlight-bold">in deiner Nähe</span></h1>
+
+        <section id="radius-section">
+            <p class="title">Wie weit darf der Besteller entfernt sein? <span class="text-highlight-transparent">(in KM)</span></p>
+            <div class="range-input-wrapper">
+                <div class="slider-wrapper">
+                    <input type="range" min="1" max="99" value="50" class="slider" id="slider-range">
+                </div>
+                <input id="range-value-input" type="text" maxlength="2" pattern="[0-9]*" value="10" />
+            </div>
+        </section>
+
+
+        <section id="searchresult-section">
+            <h5 class="result-title"><span id="searchresult-amount-value">12</span> Bestellungen gefunden</h5>
+            <div class="line-divider dark"></div>
+            <ul id="result-list">
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li data-job-id="123456">
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="distance"><span class="value">2</span>&nbsp;<span class="text-small-bold">km</span></div>
+
+                    <div class="job-details-wrapper">
+
+                        <div class="job-details">
+                            <h5 class="censored-address">12345 Stadt / Ortsteil</h5>
+                            <span class="inserted-since verylate">Vor 40 Minuten</span>
+                        </div>
+
+                        <button data-job-id="12345" class="goto-detailpage"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <nav id="main-nav">
+            <div class="option" id="main-nav-btn-home"></div>
+            <div class="option active" id="main-nav-btn-search"></div>
+            <div class="option" id="main-nav-btn-score"></div>
+            <div class="option" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * Tab Functionality
+             */
+            $('.tab-menu-item').on("click", function(e) {
+                let clickedElem = e.target;
+                if (!$(clickedElem).hasClass("active")) {
+                    $('.tab-menu-item.active').removeClass("active");
+                    $(clickedElem).addClass("active");
+                    let tabContentIdToShow = $(clickedElem).attr("data-tab-content-id");
+
+                    $('.tab-content.active').fadeOut(150, function(){
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").fadeIn(150);
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").addClass("active");
+                    });
+                }
+            });
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+
+            /**
+             * Range Slider
+             */
+            $('#slider-range').on("input", function(e) {
+                let val = $(e.target).val();
+
+                $('#range-value-input').val(val);
+            });
+
+            $('#range-value-input').on("change", function(e) {
+                let val = $(e.target).val();
+                $("#slider-range").val(val);
+            });
+
+            /**
+             * Redirect to detail
+             */
+            $('.goto-detailpage').click(function(e) {
+                let jobId = $(e.target).attr("data-job-id");
+
+                window.open("?v=botengang&bid="+jobId, "_parent");
+            });
+        });
+    </script>
+</body>
+</html>

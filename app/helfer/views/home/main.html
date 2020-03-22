@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/home/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+        <section id="top-section">
+            <h1 id="greet">Hallo Benutzer!</h1>
+
+            <div id="score-overview">
+                <div id="bg-circle">
+                    <svg viewBox="0 0 36 36">
+                        <path
+                                d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="rgba(33, 150, 243, .1)";
+                                stroke-width="2";
+                        />
+                    </svg>
+                </div>
+                <div id="value-circle">
+                    <svg id="score-path" viewBox="0 0 36 36">
+                        <path
+                                d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#2196F3";
+                                stroke-width="2";
+                                stroke-dasharray="75, 100"
+                        />
+                    </svg>
+                </div>
+                <div id="circle-content-wrapper">
+                    <span class="score-title">Meine Punkte</span>
+                    <span id="score-number" class="score-number">1.530</span>
+                    <span class="level-up-in">von <span class="level-up-threshold">1.800</span> erreicht!</span>
+                    <span id="increased-by">+50</span>
+                </div>
+            </div>
+
+            <div class="level-badge">
+                <div class="division-icon zero"></div>
+                <div class="level-text-wrap">
+                    <span>Level 9</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="job-section">
+            <ul class="tab-menu">
+                <li class="tab-menu-item active" data-tab-content-id="tab-content-laufend">Laufend</li>
+                <li class="tab-menu-item" data-tab-content-id="tab-content-archiviert">Archiviert</li>
+            </ul>
+            <div class="tab-menu-content-wrapper">
+
+                <div class="tab-content active" data-tab-content="tab-content-laufend">
+                    <ul class="job-list">
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" data-tab-content="tab-content-archiviert">
+                    <ul class="job-list">
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                        <li>
+                            <div class="job-details">
+                                <h5>Herr Mustermann</h5>
+                                <p class="address">Ort, Straße</p>
+                                <p class="job-id">Botengang Nr. 123456</p>
+                            </div>
+                            <div class="reward-info">40 Punkte</div>
+                            <button data-job-id="123456" class="goto-detailpage"></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <nav id="main-nav">
+            <div class="option active" id="main-nav-btn-home"></div>
+            <div class="option" id="main-nav-btn-search"></div>
+            <div class="option" id="main-nav-btn-score"></div>
+            <div class="option" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * Example score increase
+             */
+            let path = $("#score-path").children()[0];
+
+            let last_ts = 0;
+            let last_ts_text = 0;
+
+            let threshold;
+            let thresholdText;
+            let curValPath;
+            let curValText;
+
+            let pathLenToAnimate;
+
+            let donePath;
+            let doneText;
+
+            function increaseScore(points) {
+
+                pathLenToAnimate = (points*100) / 1800;
+
+                curVal = $(path).attr("stroke-dasharray").split(", ")[0];
+                threshold = Number(curVal) + pathLenToAnimate;
+
+                curValText = Number($('#score-number').html().split(".").join(""));
+                thresholdText = curValText+points;
+
+                animatePath();
+                animateText();
+
+                $("#increased-by").css("display", "block");
+                $("#increased-by").animate({
+                    "margin-top": "-150px",
+                    "opacity": "0"
+                }, 1500, "linear", function() {
+                    $(this).css("display", "none");
+                });
+
+            }
+
+            function numberWithPoints(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            function animateText(ts) {
+                (!ts) ? doneText = false : null
+
+                if (ts-last_ts_text > 50) {
+                    last_ts_text = ts;
+                    curValPath = Number($('#score-number').html().split(".").join(""));
+
+                    if (curValPath < thresholdText) {
+                        let newVal = numberWithPoints(curValPath + 1);
+                        $('#score-number').html(newVal);
+                    } else {
+                        doneText = true;
+                    }
+                }
+
+                if (!doneText) {
+                    requestAnimationFrame(animateText);
+                }
+            }
+
+            function animatePath(ts) {
+                (!ts) ? donePath = false : null
+
+                if (ts-last_ts > 20) {
+                    last_ts = ts;
+                    curVal = Number($(path).attr("stroke-dasharray").split(", ")[0]);
+
+                    if (curVal < threshold) {
+                        let newVal = curVal + .2;
+                        $(path).attr("stroke-dasharray", newVal + ", 100");
+                    } else {
+                        donePath = true;
+                    }
+                }
+
+                if (!donePath) {
+                    requestAnimationFrame(animatePath);
+                }
+            }
+
+            function getUrlVars() {
+                let vars = {};
+                let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+
+            let served = getUrlVars()["served"];
+            if (served === "true") {
+                increaseScore(50);
+            }
+
+            /**
+             * Tab Functionality
+             */
+            $('.tab-menu-item').on("click", function(e) {
+                let clickedElem = e.target;
+                if (!$(clickedElem).hasClass("active")) {
+                    $('.tab-menu-item.active').removeClass("active");
+                    $(clickedElem).addClass("active");
+                    let tabContentIdToShow = $(clickedElem).attr("data-tab-content-id");
+
+                    $('.tab-content.active').fadeOut(150, function(){
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").fadeIn(150);
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").addClass("active");
+                    });
+                }
+            });
+
+            /**
+             * Goto Detailpage
+             */
+            $(".goto-detailpage").click(function(e) {
+                let jobId = $(e.target).attr("data-job-id");
+
+                window.open("?v=botengang-"+jobId, "_parent");
+
+            });
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

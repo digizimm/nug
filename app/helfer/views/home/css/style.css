@@ -1,0 +1,198 @@
+/****************************************************************************************************************
+ * Top Section
+ ***************************************************************************************************************/
+#top-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background: url("../../../images/bg.png");
+    background-position: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+#greet {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 24px 0 24px 0;
+    color: #545973;
+}
+
+#score-overview {
+    width: 236px;
+    height: 236px;
+}
+
+/*************************
+ * Level Badge
+ *************************/
+.level-badge {
+    width: 120px;
+    height: 48px;
+    margin: 16px 0 24px 0;
+}
+
+.division-icon {
+    position: absolute;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+}
+
+.division-icon.zero {
+    background: url('../../../images/badge.png');
+}
+
+.level-badge .level-text-wrap {
+    position: absolute;
+    z-index: 1;
+    margin: 12px 0 0 32px;
+    padding: 4px 12px 4px 24px;
+    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    background: #2196F3;
+}
+
+/*************************
+ * Score Circle + its Content
+ *************************/
+#value-circle {
+    margin-top: -240px;
+}
+
+#circle-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 160px;
+    height: 160px;
+    margin: -200px 0 0 38px;
+}
+
+#circle-content-wrapper .score-title {
+    color: #F73378;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+#circle-content-wrapper .score-number {
+    color: #F73378;
+    font-size: 56px;
+    font-weight: 400;
+}
+#circle-content-wrapper .level-up-in {
+    color: #F73378;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#increased-by {
+    display: none;
+    position: absolute;
+    font-size: 48px;
+    font-weight: 500;
+    color: #7BBC63;
+    margin-left: 240px;
+}
+
+/****************************************************************************************************************
+ * Job Section
+ ***************************************************************************************************************/
+#job-section {
+    background: linear-gradient(0deg, #DEE4ED, #fff);
+}
+
+/*************************
+ * Tab Menu + Tab Content Container
+ *************************/
+#job-section .tab-menu {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 24px 0 24px 0;
+}
+
+#job-section .tab-menu li {
+    text-transform: uppercase;
+    color: rgba(86, 87, 113, .4);
+    padding: 0 24px 6px 24px;
+    cursor: pointer;
+}
+
+#job-section .tab-menu li.active {
+    color: #2196F3;
+    border-bottom: 2px #2196F3 solid;
+}
+
+#job-section .tab-content {
+    display: none;
+}
+
+#job-section .tab-content.active {
+    display: block;
+}
+
+/****************************************************************************************************************
+ * List + List Options
+ ***************************************************************************************************************/
+.job-list {
+    width: calc(100% - 24px);
+    margin-left: 24px;
+    padding-bottom: 72px;
+}
+
+.job-list li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background: white;
+}
+
+.job-details {
+    width: 196px;
+    margin: 16px 0 16px 16px;
+}
+
+.job-list .job-details h5 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2196F3;
+    margin: 0;
+    text-transform: none;
+}
+
+.job-list .job-details .job-id,
+.job-list .job-details .address {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    color: #565971;
+    padding: 0;
+    text-transform: none;
+}
+
+.reward-info {
+    border: 2px solid #F73378;
+    border-radius: 30px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #F73378;
+}
+
+.goto-detailpage {
+    width: 48px;
+    height: 48px;
+    background: url('../../../images/arrow_right_icon.png') no-repeat;
+    background-position: center;
+}

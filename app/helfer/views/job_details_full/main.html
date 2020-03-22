@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/job_details_full/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+        <div class="overlay" id="confirm-delivered-overlay">
+            <div class="container">
+                <h1 class="title">Bestätigung erforderlich</h1>
+                <p class="text">Bitte bestätige deine Zustellung erneut.</p>
+                <div class="abort-confirm-wrapper">
+                    <button id="abort-btn" class="abort-button">Abbrechen</button>
+                    <button id="confirm-btn" class="confirm-button">Bestätigen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <button class="back-btn"></button>
+            <h1>Botengang Nr. 123456</h1>
+        </div>
+        <div class="content">
+
+        <div class="tab-menu-wrapper">
+            <ul class="tab-menu">
+                <li class="tab-menu-item active" data-tab-content-id="tab-content-first">Haupt</li>
+                <li class="tab-menu-item" data-tab-content-id="tab-content-second">Bestellung</li>
+            </ul>
+        </div>
+
+        <div class="tab-menu-content-wrapper">
+
+            <div class="tab-content active" data-tab-content="tab-content-first">
+                <h2>Vielen Dank für deine Mithilfe!</h2>
+                <p class="subtitle">Bitte setze dich bei Rückfragen unter nachfolgender Telefonnummer mit dem Hilfesuchenden in Kontakt.</p>
+
+                <div class="details">
+                    <div class="row">
+                        <span class="label">Status</span>
+                        <span class="value">Läuft</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Für wen</span>
+                        <span class="value">Herr Mustermann</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Adresse</span>
+                        <span class="value">Musterstraße 42<br />12345 Musterhausen</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Telefon</span>
+                        <span class="value">123 / 456 78</span>
+                    </div>
+                </div>
+
+                <div class="actions">
+
+                    <button id="scan-btn" class="button-48">Kassenzettel erfasen</button>
+                    <div class="two-element-row-wrapper">
+                        <button id="pay-btn" class="button-48">Bezahlen</button>
+                        <button id="delivered-btn" class="button-48">Zugestellt</button>
+                    </div>
+                    <input hidden id="image-upload-input" type="file" accept="image/*;capture=camera">
+                </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="tab-content-second">
+                <div class="description">
+                    <span class="label">Bestellung</span>
+                    <div id="description-content">
+                        <p class="description-type-notice">Der Hilfesuchende hat sein Botengesuch telefonisch eingereicht.</p>
+                        <audio class="player" controls>
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+        <nav id="main-nav">
+            <div class="option" id="main-nav-btn-home"></div>
+            <div class="option active" id="main-nav-btn-search"></div>
+            <div class="option" id="main-nav-btn-score"></div>
+            <div class="option" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * Back Button
+             */
+            $(".back-btn").click(function() {
+                window.history.back();
+            });
+
+            /**
+             * Tab Functionality
+             */
+            $('.tab-menu-item').on("click", function(e) {
+                let clickedElem = e.target;
+                if (!$(clickedElem).hasClass("active")) {
+                    $('.tab-menu-item.active').removeClass("active");
+                    $(clickedElem).addClass("active");
+                    let tabContentIdToShow = $(clickedElem).attr("data-tab-content-id");
+
+                    $('.tab-content.active').fadeOut(150, function(){
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").fadeIn(150);
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").addClass("active");
+                    });
+                }
+            });
+
+            /**
+             * Kassenzettel erfassen
+             **/
+            $("#scan-btn").click(function() {
+
+                $("#image-upload-input").click();
+
+            });
+
+            $("#image-upload-input").on("change", function() {
+                console.log($(this).val());
+            });
+
+            /**
+             * Zugestellt action
+             */
+            $('#delivered-btn').click(function() {
+                $('#confirm-delivered-overlay').css("display", "flex").hide().fadeIn(150);
+            });
+
+            $('#abort-btn').click(function() {
+                $('#confirm-delivered-overlay').fadeOut(150);
+            });
+
+            $('#confirm-btn').click(function(){
+                window.open("?v=home&served=true", "_parent");
+            });
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/anmelden/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+        <div id="menu-container">
+            <button id="hide-menu" class="close-btn"></button>
+            <ul class="list">
+                <li><a href="?v=anmelden">Anmelden</a></li>
+                <li><a class="get-in-contact-btn" href="#">Kontakt</a></li>
+                <li><a href="?v=datenschutz">Impressum/Datenschutz</a></li>
+            </ul>
+        </div>
+
+        <section id="sticky-header">
+            <a href="/"><img src="images/logo.png" alt="Nah und Gern Logo" width="126" height)="41" /></a>
+            <a class="menu-button" href="#">
+                <img src="images/menu_button_dark.png" width="20" height="18" alt="Hauptmenü" />
+            </a>
+        </section>
+
+        <section id="pagefold">
+
+            <div id="pagefold-header">
+                <a href="/"><img src="images/logo.png" alt="Nah und Gern Logo" width="126" height)="41" /></a>
+                <a class="menu-button" href="#">
+                    <img src="images/menu_button_dark.png" width="20" height="18" alt="Hauptmenü" />
+                </a>
+            </div>
+
+            <div id="pagefold-content">
+                <h1>Anmeldung</h1>
+                <div id="login-form-wrapper">
+                    <div class="input-wrapper">
+                        <label for="id">Email oder Benutzername</label>
+                        <input type="text" id="id" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="password">Passwort</label>
+                        <input type="password" id="password" />
+                    </div>
+                    <div class="two-element-row-wrapper acceptance">
+                        <div id="cbx-wrapper">
+                            <div id="check-icon"></div>
+                            <input type="checkbox" id="cbx" />
+                        </div>
+                        <p>Angemeldet bleiben?</p>
+                    </div>
+                </div>
+                <button id="submit-btn" class="button-48">Anmelden</button>
+            </div>
+
+        </section>
+
+        <section id="footer-section">
+            <span class="copyright">&copy; 2020 nah-und-gern.de</span>
+        </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submit-btn').click(function() {
+                window.open('/app/helfer/', '_parent');
+            });
+
+            /**
+             * Registrierung Submit button
+             */
+            $('#register-btn').click(function() {
+                window.open('/?v=registrierung-abgeschlossen', '_parent');
+            });
+
+            /**
+             * Sticky Header on specific scrollposition
+             */
+            let threshold = 400;
+            let flag = false;
+            window.addEventListener("scroll", function(e) {
+                if (window.scrollY > threshold && !flag) {
+                    flag = true;
+                    $('#sticky-header').css("display", "flex")
+                        .hide().slideDown(150);
+                } else if (window.scrollY < threshold && flag) {
+                    flag = false;
+                    $('#sticky-header').slideUp(150);
+                }
+            });
+
+            /**
+             * Nug kontaktieren
+             */
+            $(".get-in-contact-btn").click(function() {
+                window.open('mailto:Nah und Gern<hallo@nah-und-gern.de>', '_blank');
+            });
+
+            /**
+             * Menu Show/Hide
+             */
+            $('.menu-button').click(function() {
+                $('#menu-container').css("display", "flex").hide();
+                $('#menu-container').fadeIn(300);
+            });
+
+            $('#hide-menu').click(function() {
+                $('#menu-container').fadeOut(300);
+            });
+
+            /**
+             * Checkbox Toggle
+             */
+            $('#cbx-wrapper').click(function() {
+                let cbxEl = $(this).find('#cbx');
+                let checked = cbxEl.prop("checked");
+
+                if (checked) {
+                    cbxEl.prop("checked", false);
+                    $('#check-icon').css("display", "none");
+                } else {
+                    cbxEl.prop("checked", true);
+                    $('#check-icon').css("display", "block");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

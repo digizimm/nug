@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/profile/css/style.css" />
+</head>
+<body>
+
+
+    <div id="main">
+
+        <div class="overlay" id="confirm-overlay">
+            <img style="position: absolute; top: 189px;" src="images/perso.png" width="327" height="363" />
+            <div class="btn3"></div>
+            <div class="btn4"></div>
+        </div>
+
+        <div class="overlay" id="confirm-overlay2">
+            <img style="position: absolute; top: 261px;" src="images/perso_notification.png" width="326" height="216" />
+            <div class="btn5"></div>
+        </div>
+
+        <div class="simulate">
+            <img src="images/profile.png" width="375" height="auto" />
+            <div class="btn1"></div>
+            <div class="btn2"></div>
+        </div>
+
+
+        <nav id="main-nav">
+            <div class="option" id="main-nav-btn-home"></div>
+            <div class="option" id="main-nav-btn-search"></div>
+            <div class="option" id="main-nav-btn-score"></div>
+            <div class="option active" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * profil bearbeiten
+             **/
+            $(".btn1").click(function() {
+                window.open('?v=profil-bearbeiten', '_parent');
+            });
+
+            $(".btn2").click(function() {
+                $('#confirm-overlay').css("display", "flex").hide().fadeIn(150);
+            });
+
+            $(".btn3").click(function() {
+                $('#confirm-overlay').fadeOut(150);
+            });
+
+            $(".btn4").click(function() {
+                $('#confirm-overlay').fadeOut(150);
+                $('#confirm-overlay2').css("display", "flex").hide().fadeIn(150);
+            });
+
+            $(".btn5").click(function() {
+                $('#confirm-overlay2').fadeOut(150);
+            });
+
+
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nah und Gern - Deine Nachbarschaftshilfe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="views/job_details/css/style.css" />
+</head>
+<body>
+    <div id="main">
+
+        <div class="overlay" id="confirm-overlay">
+            <div class="container">
+                <h1 class="title">Bestätigung erforderlich</h1>
+                <p class="text">Bitte bestätige dass du diesen Botengang<br />übernehmehn möchtest.</p>
+                <div class="abort-confirm-wrapper">
+                    <button id="abort-btn" class="abort-button">Abbrechen</button>
+                    <button id="confirm-btn" class="confirm-button">Bestätigen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <button class="back-btn"></button>
+            <h1>Botengang Details</h1>
+        </div>
+
+        <div class="content">
+            <div class="job-no">
+                <span class="label">Botengang Nr.</span>
+                <span class="job-no-value">123456</span>
+            </div>
+            <div class="where">
+                <span class="label">Stadt/Ort</span>
+                <span class="where-value">12345 Musterhausen</span>
+            </div>
+            <div class="description">
+                <span class="label">Beschreibung</span>
+                <div id="description-content">
+                    <p class="description-type-notice">Der Hilfesuchende hat sein Botengesuch telefonisch eingereicht.</p>
+                    <audio class="player" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="submit-btn-wrapper">
+                <button id="submit-btn" class="button-48">Ich kümmere mich darum!</button>
+            </div>
+        </div>
+
+
+        <nav id="main-nav">
+            <div class="option" id="main-nav-btn-home"></div>
+            <div class="option active" id="main-nav-btn-search"></div>
+            <div class="option" id="main-nav-btn-score"></div>
+            <div class="option" id="main-nav-btn-profile"></div>
+        </nav>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /**
+             * Tab Functionality
+             */
+            $('.tab-menu-item').on("click", function(e) {
+                let clickedElem = e.target;
+                if (!$(clickedElem).hasClass("active")) {
+                    $('.tab-menu-item.active').removeClass("active");
+                    $(clickedElem).addClass("active");
+                    let tabContentIdToShow = $(clickedElem).attr("data-tab-content-id");
+
+                    $('.tab-content.active').fadeOut(150, function(){
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").fadeIn(150);
+                        $(".tab-content[data-tab-content='"+tabContentIdToShow+"']").addClass("active");
+                    });
+                }
+            });
+
+            /**
+             * Bottom Navigation bar
+             */
+            $('#main-nav .option').click(function(e) {
+                switch ($(e.target).attr("id")) {
+                    case "main-nav-btn-home":
+                        window.open('?v=home', '_parent');
+                        break;
+                    case "main-nav-btn-search":
+                        window.open('?v=botengang-finden', '_parent');
+                        break;
+                    case "main-nav-btn-score":
+                        window.open('?v=ranglisten', '_parent');
+                        break;
+                    case "main-nav-btn-profile":
+                        window.open('?v=mein-profil', '_parent');
+                        break;
+                }
+            });
+
+            /**
+             * Submit action
+             */
+            $('#submit-btn').click(function() {
+                $('#confirm-overlay').css("display", "flex").hide().fadeIn(150);
+            });
+
+            $('#abort-btn').click(function() {
+                $('#confirm-overlay').fadeOut(150);
+            });
+
+            $('#confirm-btn').click(function(){
+                window.open("?v=botengang-123456", "_parent");
+            });
+
+            /**
+             * Back to search result
+             */
+            $('.back-btn').click(function(e) {
+                window.open("?v=botengang-finden", "_parent");
+            });
+        });
+    </script>
+</body>
+</html>

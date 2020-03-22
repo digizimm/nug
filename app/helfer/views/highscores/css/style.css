@@ -1,0 +1,257 @@
+#main {
+    background: linear-gradient(0deg, #2196F3, #8AC7F8);
+}
+
+.content {}
+
+h2 {
+    font-size: 21px;
+    margin: 24px 0 24px 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(84, 89, 115, .6);
+}
+
+select {
+    width: 327px;
+    height: 48px;
+    margin-left: 24px;
+    padding: 0 16px;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    outline: none;
+    border-radius: 6px;
+    border: 2px rgba(255, 255, 255, .3) solid;
+    background: none;
+}
+
+.ranking {
+    margin-top: 16px;
+    width: 375px;
+    height: 289px;
+    background: url('../../../images/ranking.png') no-repeat center;
+}
+
+.list {
+    width: 327px;
+    margin-left: 24px;
+    border-radius: 6px;
+    background: white;
+}
+
+/**
+<li>
+                    <div class="place">4.</div>
+                    <div class="avatar"></div>
+                    <div class="username">Benutzername x</div>
+                    <div class="points">8.890</div>
+                </li>
+ */
+
+.list {
+    margin-top: -48px;
+    margin-bottom: 96px;
+}
+
+.list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 72px;
+    border-bottom: 1px rgba(0, 0, 0, .1) solid;
+}
+
+.list li .place {
+    width: 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(84, 89, 115, .6);
+    margin-left: 16px;
+}
+
+.list li .avatar {
+    width: 48px;
+    height: 48px;
+    background: url('../../../images/avatar.png');
+    margin-left: 6px;
+}
+
+.list li .username {
+    width: 160px;
+    color: #545973;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 16px;
+}
+
+.list li .points {
+    color: #2196F3;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.details {
+    width: calc(100% - 80px);
+    margin: 24px 0 0 24px;
+    border-radius: 6px;
+    border: 2px solid rgba(84, 89, 115, .2);
+    padding: 0 16px;
+}
+
+.row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 48px;
+    border-bottom: 1px solid rgba(84, 89, 115, .1);
+}
+
+.row:last-child {
+    border: none;
+}
+
+.label {
+    width: 108px;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: 700;
+    color: #545973;
+}
+
+.value {
+    text-align: left;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: 500;
+    color: #545973;
+}
+
+.description {
+    padding: 24px;
+}
+
+#description-content .player {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.description-type-notice {
+    text-align: left;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(84,89,115,.6);
+    padding: 0;
+    margin: 8px 0 16px 0;
+}
+
+.description .label {
+    width: 120px;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: 700;
+    color: #545973;
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 64px;
+}
+
+.actions button {
+    margin-bottom: 12px;
+}
+
+.actions button:last-child {
+    margin: 0;
+}
+
+
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: calc( (100wv - 327px) / 2 );
+    width: 375px;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+}
+
+.overlay .container {
+    width: 327px;
+    border-radius: 6px;
+    background: white;
+}
+
+.container .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #545973;
+}
+
+.container .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #545973;
+}
+
+.abort-confirm-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(84, 89, 115, .1);
+}
+
+.abort-button {
+    width: calc(50% - 24px);
+    height: 48px;
+    background: white;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "SF Pro Display";
+    border-bottom-left-radius: 6px;
+    color: #545973;
+}
+
+.confirm-button {
+    width: calc(50% - 24px);
+    height: 48px;
+    color: white;
+    background: #2196F3;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "SF Pro Display";
+    border-bottom-right-radius: 6px;
+}
+
+#scan-btn {
+    width: 327px;
+    border: 2px solid #2196F3;
+    background: none;
+    color: #2196F3;
+}
+
+#delivered-btn,
+#pay-btn {
+    width: 161px;
+}

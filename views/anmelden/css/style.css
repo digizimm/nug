@@ -1,0 +1,189 @@
+#sticky-header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: calc( (100wv - 327px) / 2 );
+    width: 327px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 16px 24px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+/****************************************************************************************************************
+ * Pagefold
+ ***************************************************************************************************************/
+#pagefold {
+    width: 100%;
+    min-height: calc(100vh - 56px);
+    background: white;
+}
+
+#pagefold-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 16px 24px;
+}
+
+#pagefold-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+#pagefold-content h1 {
+    font-weight: 400;
+    color: rgba(84, 89, 115, 1);
+    text-align: center;
+}
+
+#pagefold-content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    color: rgba(84, 89, 115, 1);
+    text-align: center;
+    margin: 24px 0 48px 0;
+}
+
+#pagefold-content .alternative-text {
+    margin: 0;
+}
+
+#pagefold-content .button-48:first-of-type {
+    margin-bottom: 12px;
+}
+
+#start-tutorial-wrapper {
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+#start-tutorial-wrapper img {
+    float: left;
+    margin-right: 12px;
+}
+
+#start-tutorial-wrapper span {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/****************************************************************************************************************
+ * Registration Form
+  <div class="input-wrapper">
+                <label for="firstname">Vorname</label>
+                <input type="text" id="firstname" />
+            </div>
+ ***************************************************************************************************************/
+#login-form-wrapper {
+    display: flex;
+    width: 260px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 0px 24px 24px;
+}
+
+#login-form-wrapper .input-wrapper {
+    width: 100%;
+    border-bottom: 1px rgba(84, 89, 115, .15) solid;
+    margin-bottom: 8px;
+}
+
+#login-form-wrapper .input-wrapper label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(84, 89, 115, .4);
+}
+
+#login-form-wrapper .input-wrapper input {
+    border: none;
+    outline: none;
+    width: calc(100% - 16px);
+    padding: 2px 0 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(84, 89, 115, 1);
+}
+
+#register-form-section .two-element-row-wrapper {
+    display: flex;
+}
+
+#cbx-wrapper {
+    margin-right: 16px;
+    background: #F4F6F9;
+    margin-top: 6px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px rgba(84, 89, 115, .2) solid;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#cbx {
+    display: none;
+}
+
+#check-icon {
+    display: none;
+    width: 17px;
+    height: 13px;
+    background: url('../../../images/check_icon.png');
+}
+
+#login-form-wrapper .two-element-row-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 8px;
+}
+
+#login-form-wrapper .two-element-row-wrapper p {
+    font-size: 12px;
+    text-align: left;
+    padding: 0;
+    margin: 3px 0 0 0;
+    color: #545973;
+}
+
+#login-form-wrapper .two-element-row-wrapper #cbx-wrapper {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    background: #F4F6F9;
+}
+
+#login-form-wrapper #register-btn {
+    margin: 24px 0 24px 0;
+}
+
+
+/****************************************************************************************************************
+ * Footer
+ ***************************************************************************************************************/
+#footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 56px;
+    background: #2196F3;
+}
+
+#footer-section .copyright {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
